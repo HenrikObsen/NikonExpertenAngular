@@ -1,0 +1,20 @@
+<div class="carousel-wrapper">
+  <div class="carousel">
+
+    <img class="carousel__photo initial" src="../../../assets/Billeder/Bannere/Banner01.jpg">
+    <img class="carousel__photo" src="../../../assets/Billeder/Bannere/Banner02.jpg">
+    <img class="carousel__photo" src="../../../assets/Billeder/Bannere/Banner03.jpg">
+    <img class="carousel__photo" src="../../../assets/Billeder/Bannere/Banner01.jpg">
+    <img class="carousel__photo" src="../../../assets/Billeder/Bannere/Banner02.jpg">
+    <img class="carousel__photo" src="../../../assets/Billeder/Bannere/Banner03.jpg">
+    <!--<img class="carousel__photo" src="../../../assets/Billeder/Bannere/{{sItem.navn}}" *ngFor="let sItem of slides">-->
+   <!-- 
+      <div class="carousel__button--next"></div>
+      <div class="carousel__button--prev"></div>
+      -->
+  </div>
+</div>
+
+<div class="category__wrapper">
+      <kat-box class="category__wrapper--box" *ngFor="let katItem of Kategorier" [katData]="katItem"></kat-box>
+</div>

@@ -1,0 +1,228 @@
+@import '_css/Global.scss';
+
+  
+
+  //----------------------------- Banner start ---------------------------
+.banner{
+    height: 107px;
+    width: 100%;
+    margin: 0 auto 0 auto;
+    background-color: #2a2a2a;
+    display: flex;
+    background: url(../assets/gfx/Header_back.gif);
+    //background-size:cover;
+    background-repeat: repeat-x;
+    background-position: center;
+    .logo__box{
+        color:#fff;
+        font-size: 4rem;
+        font-weight: bold;
+        margin: auto; 
+        background-color: #000;
+        border: solid white 1px;
+        padding: 2px 10px 10px 10px;  
+
+        .orange__logotext{
+            color: $MainOrange;
+        }
+    }
+}
+ //----------------------------- Disktop Menu start ---------------------------
+.desktop__menu{
+    background-color: $MenuColor;
+    border-top: $MainOrange solid 1px;
+    border-bottom: $MainOrange solid 1px;
+    outline-style: solid;
+    outline-color: $MenuColor;
+    outline-width: 5px;
+    margin-bottom: 5px;
+   
+
+    .desktop__menu--menu
+    {
+        display: flex;
+        margin:auto;
+        padding: 0.5rem 0 0.5rem 0;
+        list-style-type: none;
+        font-size: 1.7rem;
+        font-weight: bold;
+        justify-content: space-between;
+        max-width: $ContentWidth - 400px;
+
+        li {
+            a {
+                display: block;
+                color:$DarkGray;
+                text-align: center;
+               
+                text-decoration: none;
+              }
+              
+              a:hover {
+                color: $MainOrange;
+              }
+        }
+    }
+}
+
+//-------------------------------------------- Mobil menu ------------------------------
+
+
+  
+  /*
+        BEM: Block__Element--Modifier
+        */
+       
+
+        .navbar {            
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            background-image: linear-gradient(180deg, black 0%, darken( $DarkGray, 10% ) 100%);
+            color:lighten($DarkGray, 40% );
+            padding: 0 0 0 8px;
+            margin: 0 0 0 0;
+            min-height: 7rem; /* 70px */
+            font-size: 1.8rem; /* 18px */
+
+            a {
+                text-decoration: none;
+            }
+            
+            .mobilelogo__box{
+                color:#fff;
+                font-size: 2.5rem;
+                font-weight: bold;
+                margin: auto; 
+                background-color: #000;
+                border: solid white 1px;
+                padding: 0.3rem 0.8rem 0.8rem 0.8rem;  
+                text-decoration: none;
+                
+                
+            
+                .orange__logotext{
+                    color: $MainOrange;
+                   
+                }
+            }
+        }
+
+        .navbar__logo {
+            vertical-align: middle;
+        }
+
+        .navbar__toggle{
+            margin-right: 1rem; /* 10px */
+            font-size: 3rem; /* 30px */            
+            cursor: pointer;
+        }
+
+        .navbar__menu {
+            background-color: darken( $DarkGray, 10% );
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            list-style: none;
+            padding: 0 0 5px 0;
+            margin:0 0 -10px 0;
+            color:white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            border-bottom: solid $DarkGray 1px;
+        }
+
+        .navbar__menu--active{
+            display: flex;
+        }
+
+        .navbar__menu li{
+            margin-left:10px; /* 15px */
+            border-top: solid $DarkGray 1px;
+            padding:10px; 
+            width:100%;
+            
+        }
+
+        .navbar__menu a{
+            text-decoration: none;
+            color:inherit;
+            text-align: left;
+        }
+//----------------------------------------------- Content wrapper ---------------------------------------
+        .content{
+            background-color: #fff;
+            min-height: 500px;
+            max-width: $ContentWidth;
+            height: 100%;
+            margin: 0 auto;
+            display: flex;
+                      
+        }
+//----------------------------------------------- Footer ---------------------------------------
+footer {
+    background-color: $MenuColor;
+    border-top: $MainOrange solid 1px;
+    border-bottom: $MainOrange solid 1px;
+    outline-style: solid;
+    outline-color: $MenuColor;
+    outline-width: 5px;
+    max-width: $ContentWidth - 9px;
+    margin: 0 auto 5px auto;
+    padding: 0.8rem 1.6rem 0.8rem 1.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.buttom{
+    max-width: $ContentWidth;
+    height: 25px;
+    margin: 0 auto 0 auto;
+    background-color: #fff;
+}
+//---------------------------------------------- Media Querys -------------------------------------------
+        @media screen and (min-width: 768px){
+            .navbar__menu{
+                display: flex;
+                flex-direction: row;                
+                justify-content: flex-end;
+                width: initial;
+                margin-right: 3rem; /* 30px */
+            }
+
+            .navbar__menu a{
+                margin-left: 1.5rem; /* 15px */                
+            }
+
+            .navbar__toggle{
+                display: none;
+            }
+        }
+
+@media(max-width: 700px)
+{
+    .banner{
+        display:none;
+    }
+
+    .desktop__menu{
+        display:none;
+    }
+
+    .navbar{
+        display:flex;
+    }
+
+}
+
+@media(min-width: 701px)
+{
+    .navbar__menu{
+        display:none;
+    }
+    .navbar{
+        display:none;
+    }
+
+}

@@ -1,0 +1,32 @@
+<header class="banner">
+    <div class="logo__box"><span class="orange__logotext">NIKON</span>&nbsp;<span class="white__logotext">experten</span></div>
+</header>
+<nav class="desktop__menu">
+
+        <ul class="desktop__menu--menu">
+                <li *ngFor="let mItem of menu">
+                    <a routerLink="{{mItem.url}}">{{mItem.navn}}</a>
+                </li>                     
+            </ul>
+</nav>
+<nav class="navbar">
+    <a href="#">
+            <div class="mobilelogo__box"><span class="orange__logotext">NIKON</span>&nbsp;<span class="white__logotext">experten</span></div>
+    </a>
+    <span class="navbar__toggle" id="js-navbar-toggle">
+        <i class="fas fa-bars"></i>
+    </span>    
+</nav>
+<ul class="navbar__menu" id="js-navbar-menu">
+        <li *ngFor="let mItem of menu">
+                <a href="#">{{mItem.navn}}</a>
+        </li>        
+    </ul>
+    
+<section class="content">
+       <router-outlet></router-outlet> 
+</section>
+<footer>
+    {{footer?.footerTekst}}
+</footer>
+<div class="buttom"></div>

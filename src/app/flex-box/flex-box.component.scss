@@ -1,0 +1,125 @@
+
+
+//----------------------------- Centrering i box start ---------------------------
+.banner{
+    height: 400px;
+    max-width: 700px;
+    margin: 40px auto 40px auto;
+    background-color: #2a2a2a;
+    display: flex;
+}
+
+.center-me{
+    color:#fff;
+    font-size: 50px;
+    margin: auto;
+}
+//----------------------------- Centrering i box slut ---------------------------
+
+//----------------------------- Eksempel colorboxe start ---------------------------
+
+.equal-height-container{
+    
+    max-width: 900px;
+   
+    margin: 0 auto;
+    display: flex;
+    
+}
+
+.first{
+    background-color: rgb(212, 202, 202);
+    padding: 20px;
+    flex: 1;
+}
+
+.secund{
+    background-color: yellow;
+    flex:1;
+    display:flex;
+    flex-direction: column;
+
+        .secund-a{
+            background-color: #c0dbe2;
+            flex:1;
+        }
+        .secund-b{
+            background-color: #cdf1c3;
+            flex:1;
+        }
+}
+
+//----------------------------- Eksempel colorboxe slut ---------------------------
+
+
+
+
+//https://www.youtube.com/watch?v=k32voqQhODc
+@media(min-width:468px)
+{
+    .container-1 {
+        //placere div i container-1 på række lige som med floate
+        display: flex;
+        //flex-direction: column;
+      
+        //align-items: flex-start;
+        //align-items: flex-end;
+        //align-items: stretch;
+        //align-items: center;
+      }
+      .container-2 {
+          //placere div i container-1 på række lige som med floate
+          display: flex;
+          //justify-content: flex-strat;
+          //justify-content: flex-end;
+          //justify-content: center;
+          //justify-content: space-around;
+          justify-content: space-between;
+      }
+}
+
+.container-3 {
+     display: flex;
+     flex-wrap: wrap;
+     //justify-content: space-around;
+     justify-content: space-between;
+  }
+
+.container-1 div, .container-2 div, .container-3 div{
+  border: 1px #ccc solid;
+  padding: 10px;
+}
+
+.box-1 {
+  //hvor meget de skal fylde
+  flex: 2;
+  //rækkefølgen boxen skal listes i
+  order: 2;
+}
+
+.box-2 {
+  flex: 1;
+  order: 1;
+}
+
+.box-3 {
+  flex: 1;
+  order: 3;
+}
+
+.container-2-box{
+    flex-basis:30%;
+} 
+
+.container-3-box{
+    flex-basis:12%;
+    //box-sizing: border-box;
+   // width:12%;
+    margin-top:20px;
+  
+}
+
+
+
+
+

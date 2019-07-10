@@ -1,0 +1,40 @@
+@import "../../_css/Global.scss";
+
+.produktkort__wrapper {
+  margin: 0 auto 20px auto;
+  width: 90%;
+  border: solid 1px lightgray;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  .produkt__content {
+    font-size: 1.1rem;
+    padding: 10px;
+    h3 {
+      margin-top:0;
+      font-size: 1.2rem;
+    }
+  }
+}
+.img__box {
+
+  .produkt__img {
+    width: 90%;
+    margin: 20px auto;
+  }
+}
+
+.paalager {
+  background-color: $MainOrange;
+}
+
+/* Media Queries */
+
+@media(max-width: 600px)
+{
+
+    .produktkort__wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    
+}

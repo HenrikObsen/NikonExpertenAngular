@@ -2,6 +2,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { HtmlTagDefinition } from '@angular/compiler';
 import { DataService } from '../_services/data.service';
 import { ActivatedRoute } from '@angular/router';
+
 //import './slider.js'
 
 

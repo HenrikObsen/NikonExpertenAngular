@@ -1,0 +1,21 @@
+<div class="produktkort__wrapper">
+
+  <div class="produkt__content">
+    <h3 [innerHTML]="pData?.navn"></h3>
+    <p>{{pData.tekst}}</p>
+    <p>
+      Varenummer: {{pData.varenummer}}<br />
+      Pris: {{pData.pris}} kr.<br />
+      Leveringstid: {{pData.leveringstid}} kr.<br />
+      Producent: {{pData.producent}}<br />
+      Nu kun: {{pData.tilbud}} kr.<br />
+      Lagerantal: {{pData.lager}} stk.<br />
+    </p>
+  </div>
+
+  <div class="img__box">
+    <img class="produkt__img" src="../../assets/Billeder/Produkter/{{pData.billede}}" alt="" />
+    <div class="seMere"><a (click)="showKatList('categoris')">[ Tilbage ]</a></div>
+  </div>
+
+</div>

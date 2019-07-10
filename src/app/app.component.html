@@ -19,7 +19,7 @@
 </nav>
 <ul class="navbar__menu" id="js-navbar-menu">
         <li *ngFor="let mItem of menu">
-                <a href="#">{{mItem.navn}}</a>
+                <a routerLink="{{mItem.url}}">{{mItem.navn}}</a>
         </li>        
     </ul>
     

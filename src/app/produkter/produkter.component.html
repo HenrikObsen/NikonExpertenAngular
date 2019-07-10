@@ -1,3 +1,15 @@
-<p>
-  produkter works!
-</p>
+<h1>Produkter</h1>
+<div class="main__wrapper">
+    <div class="form__wrapper">
+      <soge-box class="form__wrapper--box" (exOutput)="exMethodParent($event)">    
+    </soge-box>
+  </div>
+    <div class="category__wrapper" *ngIf="showCategoriList">
+        <kat-img-box class="category__wrapper--box" *ngFor="let katItem of Kategorier" (click)="open($event, katItem.id)" [katData]="katItem"></kat-img-box>
+    </div>
+    <div class="produkt__wrapper" *ngIf="showProductList">        
+        <produkt-liste-kort *ngFor="let pItem of ProductList" [pData]="pItem" (exOutput)="exShowProduct($event)"></produkt-liste-kort>
+        <br/><div class="seMere"><a (click)="Show('categoris')">[ Tilbage ]</a></div>
+    </div>
+    <produkt-kort [pData]="Product" *ngIf="showProduct" (exOutput)="Show($event)"></produkt-kort>
+</div>

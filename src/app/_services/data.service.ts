@@ -1,17 +1,17 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-
-
 import {Observable, of, throwError} from 'rxjs';
 import {map, catchError} from 'rxjs/operators';
+import { Kategori } from '../_models/Kategori';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
-
-  private _localUrl: string = "https://localhost:3001/api/"
-  private _pageUrl: string = "http://nikonapi.henrikobsen.dk/api/"
+  //god tutorial 
+  //https://www.techiediaries.com/angular-by-example-httpclient-get/?fbclid=IwAR3VThEnOlHKggNyTJ2m71ZdvgjmfUJcp8p9GvdHEc1BrUkZHnKWDTAZGwU
+  //private _localUrl: string = "https://localhost:3001/api/"
+  private _localUrl: string = "http://nikonapi.henrikobsen.dk/api/"
 
   constructor(private http: HttpClient) { }
 
@@ -22,6 +22,21 @@ export class DataService {
       return throwError("Der gik noget galt : " + error.message);
     }));         
   }
+
+    search(endpoint){
+       return this.http.get(this._localUrl + endpoint);     
+     }
+
+     getKatPro(id): Observable<Kategori>{    
+      return this.http.get<Kategori>(this._localUrl + "Kategorier/" + id)
+          .pipe(catchError(this.errorHandler));
+     }
+
+     getKatListPro(): Observable<Kategori[]>{    
+      return this.http.get<Kategori[]>(this._localUrl + "Kategorier")
+          .pipe(catchError(this.errorHandler));
+     }
+
 //***************************** OM KLUBBEN **********************************************************/
 getAllOmContent(): Observable<JSON>{
   return this.http.get<JSON>(this._localUrl + "omklubben")
@@ -82,6 +97,8 @@ getOmContent(category): Observable<JSON>{
   //       .pipe(catchError(this.errorHandler));
   // }
 
+
+  
 
   errorHandler(error : HttpErrorResponse){
     return throwError("Der gik noget galt : " + error.message);

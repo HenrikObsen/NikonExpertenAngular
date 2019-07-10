@@ -1,0 +1,20 @@
+<div class="form__wrapper--headerBox">Søgning</div>
+        <form id="myForm" class="form" (ngSubmit)="onSubmit()" #f="ngForm">                 
+           
+                                 
+                                  <select id="Kat" ngModel name="kat">
+                                      <option value="0" selected="selected" selected>Alle produkter</option>
+                                      <option value="{{kItem.id}}" *ngFor="let kItem of listKats">{{kItem?.navn}}</option>
+                                  </select>
+                                  <br/>                              
+                                  <label>Maxpris:</label><br/>   
+                                  <input id="Maxpris" type="text" required ngModel name="maxpris" />   
+                                  <br/>                 
+                                  <label>Søgeord:</label><br/>   
+                                  <input id="Sogeord" type="text" ngModel name="sogeord" required />                                          
+                                  <br/> 
+                                  <button type="submit" class="button">Søg</button>
+                                          
+       </form>
+        <div class="notFound">{{ notFound }}</div>
+      

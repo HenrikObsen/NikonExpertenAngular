@@ -1,0 +1,29 @@
+<div class="produktkort__wrapper">
+  <div class="header__box">
+    <h3 [innerHTML]="pData?.navn"></h3>
+  </div>
+  <div class="produkt__content">    
+    <table class="produkt_tbl">
+      <tr>
+        <td><img class="produkt__img" src="../../assets/Billeder/Produkter/{{pData.billede}}"
+          alt="" /></td>
+        <td>
+          Varenummer: {{pData.varenummer}}<br/>
+          Pris: {{pData.pris}} kr.<br/>
+          Leveringstid: {{pData.leveringstid}} kr.<br/>
+        </td>
+        <td>
+            Producent: {{pData.producent}}<br/>
+            Nu kun: {{pData.tilbud}} kr.<br/>
+            Lagerantal: {{pData.lager}} stk.<br/>
+
+        </td>
+        <td class="lagerStatusTD">
+          <div class="lagerStatus" [ngClass]="{'paalager': pData.lager > 0}"></div>
+          <div class="seMere"><a (click)="showProduct(pData.id)">[ Se mere ]</a></div>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+</div>

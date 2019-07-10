@@ -1,0 +1,168 @@
+@import '../_css/Global.scss';
+
+h1{
+    margin-left:20px;
+}
+#Sogeord.ng-invalid.ng-touched{
+    border:solid red 1px;
+}
+.main__wrapper {
+    width:100%;
+    display: grid;
+    grid-gap: 0px;
+    grid-template-columns: 1fr 4fr;
+    margin:0px;
+    .produkt__wrapper{
+        width: 100%;
+        .produktkort__wrapper{
+            box-shadow: $Shadow;
+            margin: 0 auto 15px auto;
+            border: solid 1px lightgray;
+            width: 90%;
+        }
+    }
+
+
+.form__wrapper{
+        display: flex;
+        margin:0 0 20px 0;
+        
+       
+        .form__wrapper--box{
+            margin: 0 auto;
+            border: 1px solid $MainOrange;
+            box-shadow: $Shadow;
+            font-size: 1.2rem;
+            vertical-align: middle;
+            padding: 0;
+            max-height: 250px;
+            .form__wrapper--headerBox{
+                color:$MainOrange;
+                font-size: 1.5rem;
+                background-color:black;
+                padding: 5px;
+                border-bottom: 1px solid $MainOrange;
+                text-align: left;
+                margin-bottom: 10px;
+            }
+            input, select{                
+                margin: 0 10px 10px 10px;
+                border: 1px solid black;
+                width:calc(100% - 20px);
+                padding-left:5px;
+            }
+
+            label{
+                margin: 10px 10px 0 10px;
+                font-weight: bold;
+            }
+            button{
+                margin:0 10px 10px 10px;
+                border-bottom: 1px solid $MainOrange;
+                color:$MainOrange;
+                    font-size: 1.5rem;
+                background-color:black;
+            }
+            .notFound{
+                color:red;
+                font-weight: bold;
+                font-size: 1.1rem;                
+                text-align: center;
+                width:200px;
+             
+                
+            }
+
+        }
+}
+
+.category__wrapper {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(135px, 1fr));
+    margin:0px 30px 30px 30px;
+    
+    .category__wrapper--box {
+        cursor: pointer;
+        border: 1px solid $MainOrange;
+        box-shadow: $Shadow;
+        text-align: center;
+        vertical-align: middle;
+        padding: 10px 0 0 0;
+        display: flex;
+        flex-direction: column;
+        .img__container{
+        
+            flex:3;
+            display: flex;
+
+            .category__img{            
+                width:70%; 
+                margin: auto;
+                          
+            }
+        }
+
+        .box__text{
+           background-color: black;
+           color:white;
+           text-align: left;
+           font-size:1.2rem;            
+           flex:1;
+           padding: 0 10px;
+           border-top: 1px solid $MainOrange;
+           margin-top: 10px;
+
+           h3{
+               color:$MainOrange;
+               font-size: 1.5rem;
+               margin:5px 0 5px 0;
+           }
+        }
+    }
+}
+}
+
+
+.seMere {
+    margin: 10px auto 10px auto;
+    width: 60px;
+    a {
+      color: black;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    a:hover {
+      color: $MainOrange;
+    }
+  }
+/* Media Queries */
+
+@media(max-width: 600px)
+{
+    .main__wrapper {
+    
+        grid-template-columns: 1fr;
+    }
+    .form__wrapper{
+        margin:0;
+        .form__wrapper--box{
+            width:calc(100% - 60px);
+        }
+    }
+    .produktkort__wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    
+}
+
+@media(min-width: 601px)
+{
+    .form__wrapper{
+        margin:0 0 20px 20px;.form__wrapper--box{
+            width:calc(100% - 30px);
+        }
+    }
+}

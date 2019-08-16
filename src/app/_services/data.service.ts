@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+
 import {Observable, of, throwError} from 'rxjs';
 import {map, catchError} from 'rxjs/operators';
 import { Kategori } from '../_models/Kategori';
+import { Besked } from '../_models/Besked';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +17,18 @@ export class DataService {
 
   constructor(private http: HttpClient) { }
 
-
+  postMail(besked:any){
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json'
+   });
+   let options = {
+      headers: headers
+   }
+   
+   console.log(besked);
+     return this.http.post(this._localUrl + "sendmail",besked, options)     
+  }
+  
   getAll(endpoint): Observable<JSON>{
     return this.http.get<JSON>(this._localUrl + endpoint)
     .pipe(catchError(error => {
@@ -79,6 +92,7 @@ getOmContent(category): Observable<JSON>{
       return throwError("Der gik noget galt : " + error.message);
     }));         
   }
+
 
 
   // postHomeText(text:IText){

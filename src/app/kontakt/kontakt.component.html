@@ -1,3 +1,46 @@
-<p>
-  kontakt works!
-</p>
+<h1>
+  Kontakt Os
+</h1>
+<div class="box__wrapper">
+  <div class="ouer__adress">
+    <div class="header__box">
+      <h3>Vores Adresse</h3>
+    </div>
+    <p>
+      {{kontaktInfo.firma}}<br/>
+      {{kontaktInfo.adresse}}<br/>
+      {{kontaktInfo.post}} {{kontaktInfo.city}}<br/>
+      <br/>
+      Tlf: {{kontaktInfo.telefon}}<br/>
+      Fax: {{kontaktInfo.fax}}<br/>
+      <br/>
+      {{kontaktInfo.mail}}<br/>
+      {{kontaktInfo.website}}<br/>
+
+    </p>
+  </div>
+  <div class="opening__howers">
+    <div class="header__box">
+      <h3>Åbningstider</h3>
+    </div>
+    <p style="white-space: pre-line;">
+        {{kontaktInfo.tider}}
+    </p>
+  </div>
+  <div class="mail__form">
+    <div class="header__box">
+      <h3>Send os en mail</h3>
+    </div>
+    <br />
+      <form id="myForm" class="form" (ngSubmit)="onSubmit()" #f="ngForm">
+        <label>Navn:</label> <input type="text" id="Navn" ngModel name="navn" required />
+        <label>E-mail:</label> <input type="text" id="Email" ngModel name="email" required />
+        <label>Emne:</label> <input type="text" id="Emne" ngModel name="emne" required />
+        <textarea id="Tekst" ngModel name="tekst"></textarea>
+        <br />
+        <button type="submit" class="button">Send</button>
+      </form>
+    
+
+  </div>
+</div>

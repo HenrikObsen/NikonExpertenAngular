@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../_services/data.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-omos',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OmosComponent implements OnInit {
 
-  constructor() { }
+ 
+  public data;
+
+  constructor(private _dataService: DataService) { 
+   
+  }
 
   ngOnInit() {
+
+    this._dataService.getAll("omos")
+    .subscribe(data => {
+      this.data = data;
+      console.log(data);
+    })
+
   }
 
 }

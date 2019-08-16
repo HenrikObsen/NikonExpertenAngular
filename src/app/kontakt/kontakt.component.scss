@@ -1,0 +1,74 @@
+@import '../_css/Global.scss';
+
+h1{
+    margin-left:15px;
+}
+.box__wrapper{
+    display:grid;
+    grid-template-columns: 1fr 2fr 2fr;
+    grid-gap: 1.5rem;
+    margin: 0 20px;
+    align-items: flex-start; 
+
+    .ouer__adress, .opening__howers{
+        border: solid 1px lightgray;
+        font-size: 1.2rem;
+        p{
+            padding-left: 10px;
+        }
+    }
+  
+    .mail__form{
+        border: solid 1px lightgray;
+        textarea{
+            height: 100px;;
+        }
+    }
+}
+
+
+ input, textarea{                
+    margin: 0 10px 10px 10px;
+    border: 1px solid black;
+    width:calc(100% - 20px);
+    padding-left:5px;
+}
+
+label{
+    margin: 10px 10px 0 10px;
+    font-weight: bold;
+}
+button{
+    margin:0 10px 10px 10px;
+    border-bottom: 1px solid $MainOrange;
+    color:$MainOrange;
+        font-size: 1.5rem;
+    background-color:black;
+}
+
+.header__box{
+    width:100%;
+    background-color: lightgray;
+    padding: 5px;
+
+    h3{
+        margin:0;
+    }
+
+} 
+
+/* Media Queries */
+
+@media(max-width: 600px)
+{
+    .box__wrapper{
+        display:grid;
+        grid-template-columns: 1fr;
+
+    }
+}
+
+@media(min-width: 601px)
+{
+   
+}
